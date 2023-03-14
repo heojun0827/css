@@ -22,7 +22,26 @@
      p::first-letter{ font-size:36px; ;}
      p::first-line{ color: red;}
     
-    #btn1{}
+     #btn1 { display:block; width: 300px; height: 40px; }
+    #ck1:checked + #btn1:before { content:"펼침"; }
+    #ck1:not(:checked) + #btn1:before { content:"접힘"; } 
+    #box { width:500px; height:300px; border:3px solid #333; 
+    background-color:gold; transition:0.5s; }
+    #ck1:checked ~ #box { visibility: visible; opacity:1;  }
+    #ck1:not(:checked) ~ #box { visibility:hidden; opacity:0; }
+
+    section {width: 600px; height: 300px;
+        border: 3px solid black;
+    background-color: aqua; display: none;}
+    section :target {display: block;}
+    /*http://http://127.0.0.1:5500/css04.html#sec1*/
+    /* 폼 관련 선택자
+    input:enabled -사용가능한 inpu 요소를 선택
+    input:disabled- 사용 불가능한 input 요소를 선택
+    input:focus - 초점(커서)가 들어왔을 때 선택
+    input::placeholder-placeholder 속성의 값을 선택
+    */
+    
     </style>
 </head>
 <body>
@@ -44,29 +63,29 @@
         경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동
         경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동
         경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동
-        경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동</p>
+        경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동경기도 파주시 와동동
+    </p>
 
-</div>
-<hr>
-<input type="cheakbox" id="ck1">
-<label for="ck1" id="btn1"></label>
-<div id="box">여기는 펼침창</div>
-<div>
-    <ul>
-        <li><a href="#sec1">메뉴1</a></li>
-        <li><a href="#sec1">메뉴2</a></li>
-        <li><a href="#sec1">메뉴3</a></li>
-    </ul>
-</div>
-<section id="sec1">
-    <h2>섹션제목1</h2>
-</section>
-<section id="sec2">
-    <h2>섹션제목2</h2>
-</section>
-<section id="sec3">
-    <h2>섹션제목3</h2>
-</section>            
-
+    </div>
+    <hr>
+    <input type="checkbox" id="ck1">
+    <label for="ck1" id="btn1"></label>
+    <div id="box">여기는 펼침창</div>
+    <div>
+        <ul>
+            <li><a href="#sec1">메뉴1</a></li>
+            <li><a href="#sec2">메뉴2</a></li>
+            <li><a href="#sec3">메뉴3</a></li>
+        </ul>
+    </div>
+    <section id="sec1">
+        <h2>섹션 제목1</h2>
+    </section>
+    <section id="sec2">
+        <h2>섹션 제목2</h2>
+    </section>
+    <section id="sec3">
+        <h2>섹션 제목3</h2>
+    </section>
 </body>
 </html>
